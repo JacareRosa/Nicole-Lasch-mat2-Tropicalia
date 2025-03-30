@@ -1,0 +1,29 @@
+
+
+div {
+  border-radius: 25px;
+  background: #ffcc80;
+  padding: 20px;
+  width: 100px;
+  height: 150px;
+  margin-left: 150;
+
+}
+div2 {
+  border-radius: 25px;
+  background: #ffc9c9;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-left: 450;
+}
+
+div3 {
+  border-radius: 25px;
+  background: #ffabab;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-left: 150;
+}
+
