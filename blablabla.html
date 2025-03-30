@@ -2,63 +2,127 @@
 <head>
 <style>
 
-div {
-  border-radius: 25px;
-  background: #ffcc80;
-  padding: 20px;
-  width: 300px;
-  height: auto;
-  margin-left: 50px;
-  overflow: hidden;
-}
-.div2 {
-  border-radius: 25px;
-  background: #ffabab;
-  padding: 20px;
-  width: 300px;
-  height: auto;
-  margin-left: 450;
-  overflow: hidden;
-}
-.div3 {
-  border-radius: 25px;
-  background: #ffc9c9;
-  padding: 20px;
-  width: 500px;
-  height: auto;
-  margin-left: 150;
-  overflow: hidden;
-}
+  body {
+    background-color: #fff8c4;
+  }
+  
+  .caixa strong {
+    text-align: center;
+    display: block; 
+  } 
 
+  /* Animação de fade-in para as caixas ao carregar */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Começa um pouco abaixo */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* A caixa vai para a posição final */
+    }
+  }
 
+  /* Animação ao passar o mouse sobre as caixas (hover) */
+  .caixa {
+    position: absolute;
+    border-radius: 25px;
+    padding: 20px;
+    width: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Inicia invisível */
+    animation: fadeIn 1s ease-out forwards; /* Animação de fade in */
+  }
+
+  .caixa1 { 
+    background: #ffcc80; 
+    top: 200px;
+    left: 50px;
+  }
+  .caixa2 { 
+    background: #ffabab; 
+    top: 350px;
+    left: 500px;
+  }
+  .caixa3 { 
+    background: #ffc9c9; 
+    top: 810px;
+    left: 200px;
+    width: 500px;
+  }
+
+  .caixa:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da caixa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao passar o mouse */
+  }
+
+  .conteudo {
+    overflow: hidden;
+    max-height: 0; /* Começa oculto */
+    opacity: 0; /* Começa invisível */
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transição suave */
+    margin-top: 10px;
+  }
+
+  .caixa.ativa .conteudo {
+    max-height: 2000px; /* Expande o conteúdo quando ativo */
+    opacity: 1; /* Deixa o conteúdo visível */
+  }
+  
+  .titulo {
+    font-family: 'Georgia', serif;
+    font-size: 60px; 
+    text-align: center; 
+    color: #000; 
+    font-weight: bold; 
+    margin-top: 30px; 
+  }
 
 </style>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="widht=device=widht, initial-scale=1.0">
-	<title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 </head>
 <body style="background-color:#fff8c4;" >
 
- <strong>Tropicalismo</strong>
+ <h1 class="titulo">TROPICALIA</h1>
  
  <br>
  <br>
  <br>
- <div>
-A Tropicália foi um movimento cultural brasileiro que surgiu na década de 1960,
+
+<div class="caixa caixa1" onclick="toggleCaixa(this)">
+  <strong>História</strong>
+  <div class="conteudo">
+    A Tropicália foi um movimento cultural brasileiro que surgiu na década de 1960,
 mais especificamente em 1967, e se manifestou principalmente na música, mas também na arte,
 no cinema e na literatura. O movimento foi uma resposta à política repressiva da ditadura militar, além de refletir uma busca por uma identidade cultural brasileira mais moderna, inovadora e experimental.Na música, o movimento Tropicália misturou diversos estilos musicais, como o samba, bossa nova, rock, música experimental e até influências do psicodélico, criando uma sonoridade única e revolucionária para a época. Ele também incorporou elementos da cultura pop e de outras manifestações internacionais, como o rock e a música eletrônica.
+  </div>
 </div>
 
-<div class="div2">
-Ele foi impulsionado por artistas como Caetano Veloso, Gilberto Gil, Gal Costa, Tom Zé, Os Mutantes, Torquato Neto e Capinam, além do maestro e arranjador Rogério Duprat.
+<div class="caixa caixa2" onclick="toggleCaixa(this)">
+  <strong>Artistas</strong>
+  <div class="conteudo">
+  Ele foi impulsionado por artistas como Caetano Veloso, Gilberto Gil, Gal Costa, Tom Zé, Os Mutantes, Torquato Neto e Capinam, além do maestro e arranjador Rogério Duprat.
 O movimento misturava música popular brasileira (MPB), rock psicodélico, bossa nova, ritmos nordestinos e elementos da cultura pop e experimental, criando um som inovador e provocador. A Tropicália também teve influência nas artes visuais, no cinema e no teatro, refletindo um espírito de contestação contra a ditadura militar e o conservadorismo cultural da época.
 O álbum "Tropicália ou Panis et Circensis" (1968) é considerado o manifesto musical do movimento. Porém, devido à repressão política, muitos dos seus principais artistas foram exilados, o que contribuiu para o fim da Tropicália como um movimento organizado, embora sua influência tenha perdurado na música brasileira.
+  </div>
 </div>
+
 <br>
 <br>
-<div class="div3">
+
+<div class="caixa caixa3" onclick="toggleCaixa(this)">
+  <strong>Atualidade</strong>
+  <div class="conteudo">
 O movimento Tropicália terminou no Brasil na década de 1960, com a prisão de Gilberto Gil e Caetano Veloso em 1968. 
 E em 1969, Caetano Veloso foi exilado para Londres, onde permaneceu até 1972. 
 O Ato Institucional nº 05, decretado pelos militares no final de 1968, aumentou a repressão política e a censura no Brasil. 
@@ -67,6 +131,25 @@ Ex: na música brasileira, o Cinema Novo e a contracultura hippie.
 O movimento trouxe novas discussões políticas e estéticas, e resgatou debates e abordagens artísticas da Semana de Arte Moderna de 1922. 
 O movimento Tropicália marcou pela irreverência e pela ironia de suas obras. 
 Ele uniu uma mistura da cultura brega, do rock psicodélico, da música erudita, da cultura popular, entre outros.
+  </div>
 </div>
+
+<script>
+  function toggleCaixa(elemento) {
+    let conteudo = elemento.querySelector(".conteudo");
+
+    // Verifica se a caixa já está ativa
+    if (conteudo.style.maxHeight) {
+      conteudo.style.maxHeight = null;
+      conteudo.style.opacity = 0; // Torna invisível
+      elemento.classList.remove("ativa");
+    } else {
+      conteudo.style.maxHeight = conteudo.scrollHeight + "px"; // Ajusta a altura para mostrar o conteúdo
+      conteudo.style.opacity = 1; // Torna visível
+      elemento.classList.add("ativa");
+    }
+  }
+</script>
+
 </body>
 </html>
