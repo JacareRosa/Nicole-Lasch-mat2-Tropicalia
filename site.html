@@ -4,7 +4,7 @@
 
   body {
     background-color: #fff8c4;
-    font-size: 16px; /* Base font size */
+    font-size: 16px; 
   }
   
   .caixa strong {
@@ -15,11 +15,11 @@
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px); /* Começa um pouco abaixo */
+      transform: translateY(20px); 
     }
     to {
       opacity: 1;
-      transform: translateY(0); /* A caixa vai para a posição final */
+      transform: translateY(0); 
     }
   }
 
@@ -65,9 +65,9 @@
 
   .conteudo {
     overflow: hidden;
-    max-height: 0; /* Começa oculto */
-    opacity: 0; /* Começa invisível */
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transição suave */
+    max-height: 0; 
+    opacity: 0; 
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     margin-top: 10px;
   }
 
@@ -100,21 +100,6 @@
       top: 10vh; 
   }
 
-  /* Media query para tablets */
-  @media (max-width: 900px) {
-    body {
-      font-size: 15px;
-    }
-
-    .titulo {
-      font-size: 7vw; /* Ajusta o título em tablets */
-    }
-
-    .caixa {
-      width: 50vw; /* Caixa ocupa 50% da tela */
-      top: 20vh; /* Ajuste de posição */
-    }
-  }
 
 </style>
 
@@ -169,14 +154,14 @@ Ele uniu uma mistura da cultura brega, do rock psicodélico, da música erudita,
   function toggleCaixa(elemento) {
     let conteudo = elemento.querySelector(".conteudo");
 
-    // Verifica se a caixa já está ativa
+    
     if (conteudo.style.maxHeight) {
       conteudo.style.maxHeight = null;
-      conteudo.style.opacity = 0; // Torna invisível
+      conteudo.style.opacity = 0;
       elemento.classList.remove("ativa");
     } else {
       conteudo.style.maxHeight = conteudo.scrollHeight + "px"; 
-      conteudo.style.opacity = 1; // Torna visível
+      conteudo.style.opacity = 1; 
       elemento.classList.add("ativa");
     }
   }
