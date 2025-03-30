@@ -11,19 +11,17 @@
     display: block; 
   } 
 
-  /* Animação de fade-in para as caixas ao carregar */
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px); /* Começa um pouco abaixo */
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
-      transform: translateY(0); /* A caixa vai para a posição final */
+      transform: translateY(0); 
     }
   }
 
-  /* Animação ao passar o mouse sobre as caixas (hover) */
   .caixa {
     position: absolute;
     border-radius: 25px;
@@ -37,8 +35,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Inicia invisível */
-    animation: fadeIn 1s ease-out forwards; /* Animação de fade in */
+    opacity: 0; 
+    animation: fadeIn 1s ease-out forwards;
   }
 
   .caixa1 { 
@@ -59,21 +57,21 @@
   }
 
   .caixa:hover {
-    transform: scale(1.1); /* Aumenta o tamanho da caixa */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao passar o mouse */
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
 
   .conteudo {
     overflow: hidden;
-    max-height: 0; /* Começa oculto */
-    opacity: 0; /* Começa invisível */
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transição suave */
+    max-height: 0; 
+    opacity: 0; 
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     margin-top: 10px;
   }
 
   .caixa.ativa .conteudo {
-    max-height: 2000px; /* Expande o conteúdo quando ativo */
-    opacity: 1; /* Deixa o conteúdo visível */
+    max-height: 2000px; 
+    opacity: 1; 
   }
   
   .titulo {
@@ -138,14 +136,14 @@ Ele uniu uma mistura da cultura brega, do rock psicodélico, da música erudita,
   function toggleCaixa(elemento) {
     let conteudo = elemento.querySelector(".conteudo");
 
-    // Verifica se a caixa já está ativa
+   
     if (conteudo.style.maxHeight) {
       conteudo.style.maxHeight = null;
-      conteudo.style.opacity = 0; // Torna invisível
+      conteudo.style.opacity = 0;
       elemento.classList.remove("ativa");
     } else {
-      conteudo.style.maxHeight = conteudo.scrollHeight + "px"; // Ajusta a altura para mostrar o conteúdo
-      conteudo.style.opacity = 1; // Torna visível
+      conteudo.style.maxHeight = conteudo.scrollHeight + "px"; 
+      conteudo.style.opacity = 1; 
       elemento.classList.add("ativa");
     }
   }
